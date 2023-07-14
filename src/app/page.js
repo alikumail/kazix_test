@@ -9,9 +9,10 @@ export default function Home() {
   return (
 <>
 <div className="content-area">
-
 <div className='container-fluid'>
 <Main couponUpdate = {setcouponBet} couponBet={couponBet}/>
+<Body viewall={false} couponUpdate = {setcouponBet} couponBet={couponBet}/>
+<Body viewall={false} couponUpdate = {setcouponBet} couponBet={couponBet}/>
 <Body viewall={false} couponUpdate = {setcouponBet} couponBet={couponBet}/>
 {couponBet.length>0 ? <Coupon coupanData={couponBet}/> : ""}
 </div>

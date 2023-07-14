@@ -12,12 +12,13 @@ body {
   margin:0px;
 }
 .header-banner {
-  background: url("http://localhost:3000/assets/images/header.png");
+  background: url("/assets/images/header.png");
   color:white;
   background-size:cover;
   position:relative;
   padding: 15px;
   border-radius: 16px;
+  margin-bottom:10px;
 }
 .header-banner::before {
   content: '';
@@ -311,4 +312,16 @@ display:none;
 }
 .bet-team {
   margin-right: 20px;
+}
+@media only screen and (max-width: 748px) {
+  .buttons-list {
+    text-align: center;
+    margin-top: 20px;
+}
+.heading-area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 }

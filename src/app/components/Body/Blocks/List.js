@@ -8,11 +8,11 @@ export default function List({matches,couponUpdate,couponBet}) {
         return (
             <>
             {((index)%3)==0 && index!=0 ? (<div className="col-md-3"></div>) : "" }
-            <div className="col-md-3">
+            <div className="col-md-3" key={index}>
              <Detail matchdata = {match} couponUpdate={couponUpdate} couponBet={couponBet}/>
              </div>
             </>
-        )})}
+            )})}
        </div>
   )
 }

@@ -4,12 +4,12 @@ import Link from 'next/link'
 
   return (
     <div className={!viewall ? `row heading-row-main`: `row heading-row-main viewallpage`}>
-        <div className="col-md-6">
+        <div className="col-sm-12 col-md-6">
         <div className="heading-area">
            <h2>Top Soccer Games</h2>
         </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-sm-12 col-md-6">
             <div className="button-area">
                 <ul className="buttons-list">
                     <li>

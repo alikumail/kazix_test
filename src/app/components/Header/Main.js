@@ -8,9 +8,9 @@ export default function Main({couponUpdate,couponBet}) {
    
         <div className='row'>
   
-          {data.map((bannerData)=> {
+          {data.map((bannerData,index)=> {
             return(
-          <div className='col-md-6'>
+          <div className='col-md-6' key={index}>
           <Banner bannerdata={bannerData} couponUpdate={couponUpdate} couponBet={couponBet}/>
           </div>
           )})}
