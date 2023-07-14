@@ -1,0 +1,26 @@
+[
+    {
+      "uid": 1,
+      "countryName": "England",
+      "leagueName": "Premier League",
+      "countryIcon": "/assets/images/SportIcons.svg",
+      "time": "Today, 1:30",
+      "teams":[
+        {
+          "teamNumber":1,
+          "teamName" : "Barracas Central",
+          "teamLogo" : "/assets/images/bc.png",
+          "odds":2.3
+        },
+        { 
+            "teamNumber":2,
+            "teamName" : "CA Central Cordoba SE",
+            "teamLogo" : "/assets/images/ac.png",
+            "odds":2.3
+          }
+    ],
+    "draw" : 5.13,
+    "bidtype":"1x2"
+    }
+  ]
+  

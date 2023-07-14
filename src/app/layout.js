@@ -1,7 +1,14 @@
+import Head from "next/head";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import './globals.css'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Poppins } from '@next/font/google';
+
+export const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Head>
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </Head>
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }
