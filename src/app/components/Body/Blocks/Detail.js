@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-export default function Detail({matchdata}) {
+export default function Detail({matchdata,couponUpdate,couponBet}) {
   const [selectedTeamOdds,setselectedTeamOdds] = useState([]);
-
-  const handelSelection = async (teamid,option) => {
+  const couponData  = couponBet;
+  const handelSelection = async (teamid,option,teamodds) => {
   let teamsArray = selectedTeamOdds;
   let obj = teamsArray.find(o => o.team === teamid && o.option===option);
   
@@ -29,6 +29,12 @@ export default function Detail({matchdata}) {
   }
   console.log(teams);
   await setselectedTeamOdds(teams);
+  let currentCoupon = [...couponData,{
+    "team1": matchdata.teams[0].teamName,
+    "team2": matchdata.teams[1].teamName,
+    "teamodds": teamodds,
+    }]
+    couponUpdate(currentCoupon);
   }
   
   return (
@@ -123,7 +129,7 @@ export default function Detail({matchdata}) {
               <button className={
               selectedTeamOdds.find(o => o.team === matchdata.uid && o.option==1) ?  'btn-1 detail-btn selectedOdd' : 'btn-1 detail-btn'
               }
-              onClick={()=>handelSelection(matchdata.uid,1)}
+              onClick={()=>handelSelection(matchdata.uid,1,matchdata.teams[0].odds)}
               >
                 <div className='detail-btn-text'>
                   1
@@ -137,7 +143,7 @@ export default function Detail({matchdata}) {
             <button className={
               selectedTeamOdds.find(o => o.team === matchdata.uid && o.option==0) ?  'btn-1 detail-btn selectedOdd' : 'btn-1 detail-btn'
               }
-              onClick={()=>handelSelection(matchdata.uid,0)}
+              onClick={()=>handelSelection(matchdata.uid,0,matchdata.draw)}
               >
                 <div className='detail-btn-text'>
                 Draw
@@ -151,7 +157,7 @@ export default function Detail({matchdata}) {
             <button className={
               selectedTeamOdds.find(o => o.team === matchdata.uid && o.option===2) ?  'btn-1 detail-btn selectedOdd' : 'btn-1 detail-btn'
               }
-              onClick={()=>handelSelection(matchdata.uid,2)}
+              onClick={()=>handelSelection(matchdata.uid,2,matchdata.teams[0].odds)}
               >
                 <div className='detail-btn-text'>
                   2

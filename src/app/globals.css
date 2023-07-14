@@ -124,6 +124,7 @@ body {
   color: white;
   margin-left: 10px;
   transition: 0.3s;
+  text-decoration: none !important;
 
 }
 .main-button:hover {
@@ -239,4 +240,75 @@ body {
 .selectedOdd {
   background: #FBFF20;
   color: #030811;
+}
+.viewallpage {
+  margin: 0;
+  padding: 32px 0px;
+}
+.viewallpage .viewallremove {
+display:none;
+}
+.viewallbtn
+{
+  display:none;
+}
+.viewallpage .viewallbtn {
+  display:block;
+  }
+  .coupon-block {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    background: white;
+    color: #0f2757;
+}
+.coupon-btn-close {
+  background: #fbff20;
+  color: #050e1e;
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  padding: 6px;
+  border-radius: 10px 0px 0px 10px;
+  font-weight: bold;
+}
+.coupon-content-area {
+  padding: 30px;
+}
+.coupon-block-heading h3 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+.bet-block {
+  display: flex;
+  justify-content: space-between;
+}
+.seleted-bets {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: dashed;
+}
+.total-stack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stack-input input {
+  max-width: 100px;
+}
+.stack-odd-value {
+  margin-top: 15px;
+}
+.odd-lable-area {
+  display: flex;
+  justify-content: space-between;
+}
+.pp-lable-area {
+  margin-top: 10px;
+  text-align: center;
+}
+.bet-team {
+  margin-right: 20px;
 }

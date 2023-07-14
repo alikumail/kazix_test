@@ -2,7 +2,7 @@
  import Banner from './Banner'
 import data from '../../../data/livematchdata.json';
 
-export default function Main() {
+export default function Main({couponUpdate,couponBet}) {
 
   return (
    
@@ -11,7 +11,7 @@ export default function Main() {
           {data.map((bannerData)=> {
             return(
           <div className='col-md-6'>
-          <Banner bannerdata={bannerData}/>
+          <Banner bannerdata={bannerData} couponUpdate={couponUpdate} couponBet={couponBet}/>
           </div>
           )})}
   

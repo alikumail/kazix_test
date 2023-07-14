@@ -5,13 +5,14 @@ import page1 from "../../../data/topsoccer/matchdatapage1.json"
 import page2 from "../../../data/topsoccer/matchdatapage2.json" 
 import page3 from "../../../data/topsoccer/matchdatapage3.json" 
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
- export default function Main() {
+ export default function Body({viewall,couponUpdate,couponBet}) {
   const [matches,setMatches] = useState(page1);
   const [pageNumber,setpageNumber] = useState(1);
   const totalPages = 3;
   const pages = [page1, page2, page3];
+
 
   function paginationFunction(ref) {
     let page = pageNumber;
@@ -32,8 +33,9 @@ import { useState } from "react"
   }
   return (
 <>
-        <Heading paginationFunction = {paginationFunction}/>
-            <List matches = {matches} />
+       
+            <Heading paginationFunction = {paginationFunction} viewall={viewall} />
+            <List matches = {matches} couponUpdate={couponUpdate} couponBet={couponBet}/>
 </>
 
 

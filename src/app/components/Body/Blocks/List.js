@@ -1,7 +1,7 @@
 'use client'
 import Detail from "./Detail" 
 
-export default function List({matches}) {
+export default function List({matches,couponUpdate,couponBet}) {
   return (
     <div className="row">
       {matches.map((match,index)=>{
@@ -9,7 +9,7 @@ export default function List({matches}) {
             <>
             {((index)%3)==0 && index!=0 ? (<div className="col-md-3"></div>) : "" }
             <div className="col-md-3">
-             <Detail matchdata = {match}/>
+             <Detail matchdata = {match} couponUpdate={couponUpdate} couponBet={couponBet}/>
              </div>
             </>
         )})}

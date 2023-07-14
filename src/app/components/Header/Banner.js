@@ -3,10 +3,13 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-export default function Banner({bannerdata}) {
+export default function Banner({bannerdata,couponUpdate,couponBet}) {
 
 const [selectedTeamOdds,setselectedTeamOdds] = useState([]);
-const handelSelection = async (teamid,option) => {
+const handelSelection = async (teamid,option,teamodds) => {
+const couponData  = couponBet;
+
+
 let teamsArray = selectedTeamOdds;
 let obj = teamsArray.find(o => o.team === teamid && o.option===option);
 
@@ -28,6 +31,13 @@ if(obj)
         }];  
 }
 await setselectedTeamOdds(teams);
+let currentCoupon = [...couponData,{
+"team1": bannerdata.teams[0].teamName,
+"team2": bannerdata.teams[1].teamName,
+"teamodds": teamodds,
+}
+];
+couponUpdate(currentCoupon);
 }
   return (
     <div className='header-banner'>
@@ -78,12 +88,12 @@ await setselectedTeamOdds(teams);
             <button className={
                 selectedTeamOdds.find(o => o.team === bannerdata.uid && o.option==1) ? ('banner-footer-style banner-footer-center selectedOdd') : ('banner-footer-style banner-footer-center')
             } 
-            onClick={()=>handelSelection(bannerdata.uid,1)}>
+            onClick={()=>handelSelection(bannerdata.uid,1,bannerdata.teams[0].odds)}>
                 <div className='banner-footer-left-text'>
                     1
                 </div>
                 <div className='banner-footer-left-value'>
-                { bannerdata.teams[1].odds}
+                { bannerdata.teams[0].odds}
                 </div>
             </button>
         </div>
@@ -92,7 +102,7 @@ await setselectedTeamOdds(teams);
                 selectedTeamOdds.find(o => o.team === bannerdata.uid && o.option==0) ? ('banner-footer-style banner-footer-center selectedOdd') : ('banner-footer-style banner-footer-center')
             }
             
-            onClick={()=>handelSelection(bannerdata.uid,0)}>
+            onClick={()=>handelSelection(bannerdata.uid,0,bannerdata.draw)}>
                 <div className='banner-footer-center-text'>
                     Draw
                 </div>
@@ -104,7 +114,7 @@ await setselectedTeamOdds(teams);
         <div className='col-4'>
             <button className={
                 selectedTeamOdds.find(o => o.team === bannerdata.uid && o.option==2) ? ('banner-footer-style banner-footer-center selectedOdd') : ('banner-footer-style banner-footer-center')
-                } onClick={()=>handelSelection(bannerdata.uid,2)}>
+                } onClick={()=>handelSelection(bannerdata.uid,2,bannerdata.teams[1].odds)}>
                 <div className='banner-footer-center-text'>
                     2
                 </div>
