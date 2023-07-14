@@ -56,6 +56,7 @@ const couponOpen = () => {
                   type="number"
                   className="form-control"
                   name="betCost"
+                  value={betcost}
                   onChange={(e) => setBetCost(e.target.value)}
                 />
                     </div>
@@ -79,7 +80,7 @@ const couponOpen = () => {
                         <div className="total-pp-number-area">
                         <strong>$ 
                         {
-                       Math.round(((coupanData.reduce((accumulator, currentValue) => accumulator + currentValue.teamodds, 0)*betcost)+betcost))}
+                      Number(((coupanData.reduce((accumulator, currentValue) => accumulator + currentValue.teamodds, 0)*betcost)+betcost)).toFixed(2)}
 
                         </strong>
                         </div>
