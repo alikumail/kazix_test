@@ -1,25 +1,14 @@
-import { useState, useContext, useEffect } from 'react';
-import { CouponContext, CouponContextType } from '@/context/CouponContext';
+
 import BettingOption from '@/components/Common/BettingOption';
+import { useSelectedOptions } from '../../../../hooks/useSelectedOptions'; 
 import Breadcrumb from '../../../Common/BreadCrumb';
 import GameTime from './GameTime';
 import PlayingTeams from './PlayingTeam';
 import { Game } from '@/types/GameType';
 
 export default function UpcomingGameCard({ gameData }: { gameData: Game }) {
-  const [selected, setSelected] = useState<boolean[]>([false, false, false]);
-  const { couponData }: CouponContextType = useContext(CouponContext);
 
-  useEffect(() => {
-    const selectedBtn = couponData.find((o) => o.gameId === gameData.gameUid);
-    if (selectedBtn) {
-      setSelected([
-        selectedBtn.option === '1',
-        selectedBtn.option === 'draw',
-        selectedBtn.option === '2',
-      ]);
-    }
-  }, [couponData, gameData]);
+  const selected = useSelectedOptions(gameData.gameUid);
 
   return (
     <div className="game-main-block">
