@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { CouponContext, CouponContextType } from '@/context/CouponContext';
 import BettingOption from '@/components/Common/BettingOption';
-import Breadcrumb from './BreadCrumb';
+import Breadcrumb from '../../../Common/BreadCrumb';
 import GameTime from './GameTime';
 import PlayingTeams from './PlayingTeam';
 import { Game } from '@/types/GameType';
@@ -29,6 +29,7 @@ export default function UpcomingGameCard({ gameData }: { gameData: Game }) {
             logo={gameData.countryIcon}
             placeName={gameData.countryName}
             leagueName={gameData.leagueName}
+            theme = "body"
           />
         </div>
         <div className="col-2">

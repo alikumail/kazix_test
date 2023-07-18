@@ -1,6 +1,6 @@
 'use client'
-import { UUID } from 'crypto';
-import { createContext, useState, Dispatch, SetStateAction, ReactNode } from 'react';
+
+import { createContext, useState, ReactNode } from 'react';
 
 export type Coupon = {
   option: string;

@@ -1,3 +1,4 @@
+
 export type Game = {
   gameUid: number;
   countryName: string;

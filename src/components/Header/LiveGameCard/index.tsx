@@ -1,6 +1,6 @@
 'use client'
 import { useState,useContext, useEffect } from "react";
-import Breadcrumb from "./BreadCrumb";
+import Breadcrumb from "../../Common/BreadCrumb";
 import GameScore from "./GameScore";
 import BettingOption from "../../Common/BettingOption";
 import { Game } from "@/types/GameType";
@@ -32,7 +32,7 @@ useEffect(() => {
       <div className="header-banner-content">
         <div className="row">
           <div className="col-12">
-           <Breadcrumb logo = {gameData.countryIcon} placeName = {gameData.countryName} leagueName= {gameData.leagueName} />
+           <Breadcrumb logo = {gameData.countryIcon} placeName = {gameData.countryName} leagueName= {gameData.leagueName} theme = {"header"}/>
           </div>
         </div>
         <div className="row">

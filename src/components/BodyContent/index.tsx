@@ -12,7 +12,7 @@ export default function BodyContent({ all } : MainBodyProps) {
   const gamesType: string = 'upcoming';
   const [games, setGames] = useState<any[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
-
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,6 +20,7 @@ export default function BodyContent({ all } : MainBodyProps) {
 
         setGames(fetchedGames.games);
         setTotalPages(fetchedGames.totalPages);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching games:', error);
       }
@@ -30,8 +31,10 @@ export default function BodyContent({ all } : MainBodyProps) {
 
   return (
     <>
+      {loading ? ("") : (<>
       <TopBar page={page} setPage={setPage} totalPage={totalPages} all={all} />
       <TopGameSection games={games} />
+      </>)}
     </>
   );
 }

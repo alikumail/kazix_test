@@ -20,7 +20,8 @@ export default function BettingOption({ optionName,gameId, odds , selected, them
   }: CouponContextType = useContext(CouponContext);
 
 
-  const handleSelection = async (gameId:number, selectedOption:string,odds:number) => {
+  
+  const handleSelection = (gameId:number, selectedOption:string,odds:number) => {
     const alreadyAdded = couponData.find((o) => o.gameId === gameId && o.option === selectedOption);
 
     let currentCoupon = couponData.filter((o) => o.gameId !== gameId);
@@ -35,7 +36,6 @@ export default function BettingOption({ optionName,gameId, odds , selected, them
         },
       ];
     }
-
     couponUpdate(currentCoupon);
       }
   return (

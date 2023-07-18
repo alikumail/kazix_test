@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import './globals.css'
+import '../assets/css/style.css';
 
 import { Poppins } from 'next/font/google';
 
