@@ -11,6 +11,9 @@ export default function Home() {
         <div className="container-fluid">
           <Header />
           <BodyContent all={false} />
+          <BodyContent all={false} />
+          <BodyContent all={false} />
+
           <Coupon />
         </div>
       </div>
